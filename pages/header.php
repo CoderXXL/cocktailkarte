@@ -8,6 +8,7 @@
         <a href="cocktails.php">Cocktails</a>
         <?php if (!isset($_SESSION['userid'])): ?>
             <a href="login.php">Login</a>
+
         <?php else: ?>
             <a href="profil.php">Profil</a>
         <?php endif; ?>

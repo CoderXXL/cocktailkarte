@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <?php
-include('../helpers/conn.php');
-include('../helpers/cocktails.php');
+include('../../helpers/conn.php');
+include('../../helpers/cocktails.php');
 
 
 ?>
@@ -10,16 +10,16 @@ include('../helpers/cocktails.php');
     <title>Cocktails</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="../assets/css/main.css"/>
+    <link rel="stylesheet" href="../../assets/css/main.css"/>
     <noscript>
-        <link rel="stylesheet" href="../assets/css/noscript.css"/>
+        <link rel="stylesheet" href="../../assets/css/noscript.css"/>
     </noscript>
 </head>
 <body class="is-preload">
 
 <div id="wrapper">
     <header id="header">
-        <h1><a href="experimental.php"><strong>Cocktails</strong> get in touch</a></h1>
+        <h1><a href="index.php"><strong>Cocktails</strong> get in touch</a></h1>
         <nav>
             <ul>
                 <li><a href="#footer" class="icon solid fa-info-circle">Mehr</a></li>
@@ -31,9 +31,9 @@ include('../helpers/cocktails.php');
     <div id="main">
         <?php foreach ($cocktails as $cocktail): ?>
             <article class="thumb">
-                <a href="../images/fulls/01.jpg" class="image"><img src="../images/thumbs/0<?php echo $cocktail->id ?>.jpg"
-                                                                    alt="<?php echo $cocktail->name ?>"/></a>
-                <h2><a href="cocktail.php?id=<?php echo $cocktail->id; ?>"><?php echo $cocktail->name; ?></a></h2>
+                <a href="../../images/fulls/0<?php echo $cocktail->id ?>.jpg" class="image"><img src="../../images/thumbs/0<?php echo $cocktail->id ?>.jpg"
+                                                                       alt="<?php echo $cocktail->name ?>"/></a>
+                <h2><a href="../cocktail.php?id=<?php echo $cocktail->id; ?>"><?php echo $cocktail->name; ?></a></h2>
                 <p>Zubereitung: <br /> <?php echo $cocktail->zubereitung ?></p>
             </article>
         <?php endforeach; ?>
@@ -44,13 +44,12 @@ include('../helpers/cocktails.php');
         <div class="inner split">
             <div>
                 <section>
-                    <h2>lol</h2>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et dolore magna aliquyam.</p>
-                </section>
-                <section>
-                    <h2>lol</h2>
-
+                    <a>Cocktails</a>
+                    <?php if (!isset($_SESSION['userid'])): ?>
+                        <a href="login.php">Login</a>
+                    <?php else: ?>
+                        <a href="profil.php">Profil</a>
+                    <?php endif; ?>
                 </section>
             </div>
             <div>
@@ -80,12 +79,12 @@ include('../helpers/cocktails.php');
 
 </div>
 
-<script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/jquery.poptrox.min.js"></script>
-<script src="../assets/js/browser.min.js"></script>
-<script src="../assets/js/breakpoints.min.js"></script>
-<script src="../assets/js/util.js"></script>
-<script src="../assets/js/main.js"></script>
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/jquery.poptrox.min.js"></script>
+<script src="../../assets/js/browser.min.js"></script>
+<script src="../../assets/js/breakpoints.min.js"></script>
+<script src="../../assets/js/util.js"></script>
+<script src="../../assets/js/main.js"></script>
 
 </body>
 </html>

@@ -5,7 +5,7 @@ include('./header.php');
 
 $db;
 
-if (isset($_GET['login'])) {
+if(isset($_GET['login'])) {
     $email = $_POST['email'];
     $passwort = $_POST['passwort'];
 
@@ -32,7 +32,7 @@ if (isset($_GET['login'])) {
 </head>
 <body>
 
-<?php if (isset($errorMessage)): ?>
+<?php if(isset($errorMessage)): ?>
     <p><?php echo $errorMessage; ?></p>
 <?php endif; ?>
 
@@ -44,7 +44,7 @@ if (isset($_GET['login'])) {
 
     <div>
         <label for="password">Password</label>
-        <input type="password" size="40" id="password" maxlength="250" name="passwort">
+        <input type="password" size="40"  id="password" maxlength="250" name="passwort">
     </div>
 
     <a href="register.php">Regestrieren</a>

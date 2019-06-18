@@ -1,6 +1,11 @@
 <?php
+session_start();
 include('./header.php');
-include('../helpers/cocktails.php')
+include('../helpers/cocktails.php');
+
+if (!isset($_SESSION['userid'])) {
+    header('Location: ../pages/login.php');
+}
 ?>
 
 
