@@ -4,7 +4,7 @@ include('./header.php');
 include('../helpers/cocktails.php');
 
 if (!isset($_SESSION['userid'])) {
-    header('Location: ../pages/login.php');
+    header('Location: login.php');
 }
 ?>
 

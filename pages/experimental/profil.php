@@ -4,11 +4,19 @@ session_start();
 include('../../helpers/conn.php');
 include('../../helpers/cocktails.php');
 
+if (!isset($_SESSION['userid'])) {
+    die('Bitte zuerst <a href="./login.php">einloggen</a>');
+}
+
+$userid = $_SESSION['userid'];
+$sql = 'SELECT vorname from users WHERE id = ' . $userid;
+
+$data = $db->query($sql)->fetchObject();
 
 ?>
 <html>
 <head>
-    <title>Cocktails</title>
+    <title>Hallo <?php echo $data->vorname ?></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../../assets/css/main.css"/>
@@ -30,28 +38,25 @@ include('../../helpers/cocktails.php');
 
 
     <div id="main">
-<!--        --><?php //foreach ($cocktails as $cocktail): ?>
-<!--            <article class="thumb">-->
-<!--                <a href="../../images/fulls/01.jpg" class="image"><img src="../../images/thumbs/0--><?php //echo $cocktail->id ?><!--.jpg"-->
-<!--                                                                       alt="--><?php //echo $cocktail->name ?><!--"/></a>-->
-<!--                <h2><a href="../cocktail.php?id=--><?php //echo $cocktail->id; ?><!--">--><?php //echo $cocktail->name; ?><!--</a></h2>-->
-<!--                <p>Zubereitung: <br /> --><?php //echo $cocktail->zubereitung ?><!--</p>-->
-<!--            </article>-->
-<!--        --><?php //endforeach; ?>
+
+        <h3>Willkommen bei der besten Cocktailkarte im Internet, <?php echo $data->vorname ?></h3>
 
     </div>
+    <div>
+        <button onClick="location.href='logout.php'">Logout</button>
+    </div>
+
 
     <footer id="footer" class="panel">
         <div class="inner split">
             <div>
                 <section>
-                    <a>Cocktails</a>
+                    <button onClick="location.href='index.php'">Cocktails</button>
                     <?php if (!isset($_SESSION['userid'])): ?>
-                        <a href="login.php">Login</a>
+                        <button onClick="location.href='login.php'">Login</button>
                     <?php else: ?>
-                        <a href="profil.php">Profil</a>
+                        <button onClick="location.href='profil.php'">Profil</button>
                     <?php endif; ?>
-
                 </section>
             </div>
             <div>

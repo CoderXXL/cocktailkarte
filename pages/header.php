@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../style.css">
+<?php header('Content-Type: text/html; charset=UTF-8'); ?>
 
 <meta charset="utf-8"/>
 <header>

@@ -5,7 +5,7 @@ $cocktail = null;
 $userId = null;
 
 if (!isset($_SESSION['userid'])) {
-    header('Location: ../pages/login.php');
+    header('Location: login.php');
 }
 
 if (isset($_GET['id'])) {

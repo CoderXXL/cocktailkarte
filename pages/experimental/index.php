@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <?php
+session_start();
 include('../../helpers/conn.php');
 include('../../helpers/cocktails.php');
 
@@ -33,7 +34,7 @@ include('../../helpers/cocktails.php');
             <article class="thumb">
                 <a href="../../images/fulls/0<?php echo $cocktail->id ?>.jpg" class="image"><img src="../../images/thumbs/0<?php echo $cocktail->id ?>.jpg"
                                                                        alt="<?php echo $cocktail->name ?>"/></a>
-                <h2><a href="../cocktail.php?id=<?php echo $cocktail->id; ?>"><?php echo $cocktail->name; ?></a></h2>
+                <h2><a href="./cocktail.php?id=<?php echo $cocktail->id; ?>"><?php echo $cocktail->name; ?></a></h2>
                 <p>Zubereitung: <br /> <?php echo $cocktail->zubereitung ?></p>
             </article>
         <?php endforeach; ?>
@@ -44,11 +45,11 @@ include('../../helpers/cocktails.php');
         <div class="inner split">
             <div>
                 <section>
-                    <a>Cocktails</a>
+                    <button onClick="location.href='index.php'">Cocktails</button>
                     <?php if (!isset($_SESSION['userid'])): ?>
-                        <a href="login.php">Login</a>
+                        <button onClick="location.href='login.php'">Login</button>
                     <?php else: ?>
-                        <a href="profil.php">Profil</a>
+                        <button onClick="location.href='profil.php'">Profil</button>
                     <?php endif; ?>
                 </section>
             </div>

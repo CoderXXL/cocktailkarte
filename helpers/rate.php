@@ -13,7 +13,7 @@ if (isset($_GET['delete'], $_GET['user'], $_GET['cocktail'])) {
         $db->query("DELETE FROM rating WHERE user = {$user} AND cocktail = {$cocktail}")->fetch();
     }
 
-    header('Location: ../pages/cocktail.php?id=' . $cocktail);
+    header('Location: ../pages/experimental/cocktail.php?id=' . $cocktail);
 }
 
 
@@ -33,6 +33,6 @@ if (isset($_GET['cocktail'], $_GET['rating'], $_GET['user'])) {
     }
 
 
-    header('Location: ../pages/cocktail.php?id=' . $cocktail);
+    header('Location: ../pages/experimental/cocktail.php?id=' . $cocktail);
 }
 

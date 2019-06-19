@@ -10,7 +10,7 @@
 <body>
 <!-- header -->
 <?php
-header('Location: ./pages/cocktails.php');
+header('Location: ./pages/experimental/indexsud.php');
 ?>
 </body>
 </html>

@@ -1,9 +1,22 @@
 <!DOCTYPE HTML>
+<?php
+session_start();
+include('../../helpers/conn.php');
+include('../../helpers/cocktail.php');
 
+
+
+$hasRated = false;
+if ($db->query("SELECT user FROM rating WHERE cocktail = {$cocktail->id} AND user = {$_SESSION['userid']}")->fetch()[0] === $_SESSION['userid']) {
+    $hasRated = true;
+} else {
+    $hasRated = false;
+}
+?>
 
 <html>
 <head>
-    <title>Login</title>
+    <title>Hallo <?php echo $data->vorname ?></title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../../assets/css/main.css"/>
@@ -25,52 +38,25 @@
 
 
     <div id="main">
-        <?php
-        session_start();
-        include('../../helpers/conn.php');
-        include('../../helpers/cocktails.php');
-
-
-        $db;
-
-        if (isset($_GET['login'])) {
-            $email = $_POST['email'];
-            $passwort = $_POST['passwort'];
-
-            $statement = $db->prepare("SELECT * FROM users WHERE email = :email");
-            $result = $statement->execute(array('email' => $email));
-            $user = $statement->fetch();
-
-            if ($user !== false && password_verify($passwort, $user['passwort'])) {
-                $_SESSION['userid'] = $user['id'];
-                die('Login erfolgreich. Weiter zum <a href="profil.php">Profil</a>');
-            } else {
-                $errorMessage = "E-Mail oder Passwort war ungültig</ br>";
-            }
-
-        }
-        ?>
-
-        <?php if (isset($errorMessage)): ?>
-            <p><?php echo $errorMessage; ?></p>
+        <?php if ($cocktail): ?>
+            <div class="cocktail">
+                <h3>Rate the <?php echo $cocktail->name; ?></h3>
+                <p class="cocktail-rating">Current rating: <?php echo round($cocktail->rating) ?>/5</p>
+                <div class="cocktail-rate">
+                    <?php if ($hasRated): ?>
+                        <p>You all ready rated this Cocktail, <a href="../../helpers/rate.php?delete=1&user=<?php echo $userId ?>&cocktail=<?php echo $cocktail->id; ?>">Delete?</a></p>
+                    <?php else: ?>
+                        <p>Rate this cocktail:
+                            <?php foreach (range(1, 5) as $rating): ?>
+                                <a href="../../helpers/rate.php?cocktail=<?php echo $cocktail->id; ?>&rating=<?php echo $rating; ?>&user=<?php echo $userId ?>"><?php echo $rating; ?></a>
+                            <?php endforeach; ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </div>
         <?php endif; ?>
-
-        <form action="?login=1" method="post" style="width: 500px; text-align: right;">
-            <div>
-                <label for="email">E-Mail</label>
-                <input type="email" size="40" id="email" maxlength="250" name="email">
-            </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" size="40" id="password" maxlength="250" name="passwort">
-            </div>
-
-            <a href="register.php">Regestrieren</a>
-            <input type="submit" value="Login">
-        </form>
-
     </div>
+
 
     <footer id="footer" class="panel">
         <div class="inner split">
