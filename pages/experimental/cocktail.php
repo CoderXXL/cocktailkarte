@@ -44,11 +44,11 @@ if ($db->query("SELECT user FROM rating WHERE cocktail = {$cocktail->id} AND use
                 <p class="cocktail-rating">Current rating: <?php echo round($cocktail->rating) ?>/5</p>
                 <div class="cocktail-rate">
                     <?php if ($hasRated): ?>
-                        <p>You all ready rated this Cocktail, <a href="../../helpers/rate.php?delete=1&user=<?php echo $userId ?>&cocktail=<?php echo $cocktail->id; ?>">Delete?</a></p>
+                        <p>You all ready rated this Cocktail, <a href="../../helpers/rate.php?delete=1&cocktail=<?php echo $cocktail->id; ?>">Delete?</a></p>
                     <?php else: ?>
                         <p>Rate this cocktail:
                             <?php foreach (range(1, 5) as $rating): ?>
-                                <a href="../../helpers/rate.php?cocktail=<?php echo $cocktail->id; ?>&rating=<?php echo $rating; ?>&user=<?php echo $userId ?>"><?php echo $rating; ?></a>
+                                <a href="../../helpers/rate.php?cocktail=<?php echo $cocktail->id; ?>&rating=<?php echo $rating; ?>"><?php echo $rating; ?></a>
                             <?php endforeach; ?>
                         </p>
                     <?php endif; ?>

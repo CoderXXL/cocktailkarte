@@ -3,16 +3,7 @@
 session_start();
 include('../../helpers/conn.php');
 include('../../helpers/cocktails.php');
-
-if (!isset($_SESSION['userid'])) {
-    die('Bitte zuerst <a href="./login.php">einloggen</a>');
-}
-
-$userid = $_SESSION['userid'];
-$sql = 'SELECT vorname from users WHERE id = ' . $userid;
-
-$data = $db->query($sql)->fetchObject();
-
+$db;
 ?>
 <html>
 <head>

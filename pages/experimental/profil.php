@@ -13,6 +13,7 @@ $sql = 'SELECT vorname from users WHERE id = ' . $userid;
 
 $data = $db->query($sql)->fetchObject();
 
+
 ?>
 <html>
 <head>
@@ -42,10 +43,24 @@ $data = $db->query($sql)->fetchObject();
         <h3>Willkommen bei der besten Cocktailkarte im Internet, <?php echo $data->vorname ?></h3>
 
     </div>
+
     <div>
         <button onClick="location.href='logout.php'">Logout</button>
     </div>
 
+    <div>
+        <button onClick="location.href='./profil.php?changename=true'">Change Username</button>
+    </div>
+    <?php if(isset($_GET['changename'])): ?>
+        <form action="../../helpers/changename.php" method="get">
+            <label for="vorname_neu">Enter new name</label>
+            <input type="text" name="vorname_neu" id="vorname_neu"/>
+            <label for="nachname_neu">Enter new lastname</label>
+            <input type="text" name="nachname_neu" id="nachname_neu"/>
+            <input type="submit" />
+        </form>
+
+    <?php endif; ?>
 
     <footer id="footer" class="panel">
         <div class="inner split">
