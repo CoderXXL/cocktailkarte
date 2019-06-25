@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
 }
@@ -26,4 +26,28 @@ header {
             }
         }
     } 
+} */
+.card {
+    border-radius: 3px;
+    background: #2b2d30;
+    padding: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10%;    
+}
+
+.profil-card {
+    margin-top: 0;
+}
+
+.login-form {
+    .login-form-buttons {
+        padding-top: 10px;
+        
+        input {
+            margin-left: 10px;
+        }
+    }
 }

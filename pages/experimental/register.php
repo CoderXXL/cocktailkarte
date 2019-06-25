@@ -11,6 +11,7 @@ $db;
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../../assets/css/main.css"/>
+    <link rel="stylesheet" href="../../style.css"/>
     <noscript>
         <link rel="stylesheet" href="../../assets/css/noscript.css"/>
     </noscript>
@@ -81,32 +82,33 @@ $db;
 
         if ($showFormular) {
             ?>
+            <div class="card">
+                <form action="?register=1" method="post" style="width: 500px; text-align: leaft;">
+                    <div>
+                        <label for="email">E-Mail:</label>
+                        <input type="email" size="40" maxlength="250" id="email" name="email">
+                    </div>
+                    <div>
+                        <label for="vorname">Vorname:</label>
+                        <input type="text" size="40" maxlength="250" id="vorname" name="vorname" required>
+                    </div>
+                    <div>
+                        <label for="nachname">Nachname:</label>
+                        <input type="text" size="40" maxlength="250" id="nachname" name="nachname" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" size="40" id="password" maxlength="250" name="passwort">
+                    </div>
+                    <div>
+                        <label for="password2">Password Wiederholen:</label>
+                        <input type="password" size="40" maxlength="250" id="password2" name="passwort2">
+                    </div>
 
-            <form action="?register=1" method="post" style="width: 500px; text-align: right;">
-                <div>
-                    <label for="email">E-Mail:</label>
-                    <input type="email" size="40" maxlength="250" id="email" name="email">
-                </div>
-                <div>
-                    <label for="vorname">Vorname:</label>
-                    <input type="text" size="40" maxlength="250" id="vorname" name="vorname" required>
-                </div>
-                <div>
-                    <label for="nachname">Nachname:</label>
-                    <input type="text" size="40" maxlength="250" id="nachname" name="nachname" required>
-                </div>
-                <div>
-                    <label for="password">Password:</label>
-                    <input type="password" size="40" id="password" maxlength="250" name="passwort">
-                </div>
-                <div>
-                    <label for="password2">Password Wiederholen:</label>
-                    <input type="password" size="40" maxlength="250" id="password2" name="passwort2">
-                </div>
-
-                <a href="login.php">Login</a>
-                <input type="submit" value="Abschicken">
-            </form>
+                    <a href="login.php">Login</a>
+                    <input type="submit" value="Abschicken">
+                </form>
+            </div>
 
             <?php
         }

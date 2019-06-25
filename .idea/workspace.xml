@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9ce6e048-c19b-47f4-9d5f-76f7d40bc3ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/cocktail.php" beforeDir="false" afterPath="$PROJECT_DIR$/old/cocktail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/cocktails.php" beforeDir="false" afterPath="$PROJECT_DIR$/old/cocktails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/old/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/old/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/old/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/old/profil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/old/register.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -258,17 +251,17 @@
       <workItem from="1560849625689" duration="1657000" />
       <workItem from="1560859580612" duration="14526000" />
       <workItem from="1560937765983" duration="12000" />
-      <workItem from="1561103468300" duration="9441000" />
+      <workItem from="1561103468300" duration="9727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60863000" />
+    <option name="totallyTimeSpent" value="61149000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-2" width="3840" height="1554" extended-state="7" />
+    <frame x="1920" y="-2" width="3840" height="1554" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.065629944" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.065629944" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -281,7 +274,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18947369" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18947369" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

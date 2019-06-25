@@ -21,6 +21,8 @@ $data = $db->query($sql)->fetchObject();
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../../assets/css/main.css"/>
+    <link rel="stylesheet" href="../../style.css"/>
+
     <noscript>
         <link rel="stylesheet" href="../../assets/css/noscript.css"/>
     </noscript>
@@ -43,24 +45,24 @@ $data = $db->query($sql)->fetchObject();
         <h3>Willkommen bei der besten Cocktailkarte im Internet, <?php echo $data->vorname ?></h3>
 
     </div>
+    <div class="card profil-card">
+        <div>
+            <button onClick="location.href='logout.php'">Logout</button>
 
-    <div>
-        <button onClick="location.href='logout.php'">Logout</button>
+            <button onClick="location.href='./profil.php?changename=true'">Change Username</button>
+        </div>
+
+        <?php if(isset($_GET['changename'])): ?>
+            <form action="../../helpers/changename.php" method="get">
+                <label for="vorname_neu">Enter new name</label>
+                <input type="text" name="vorname_neu" id="vorname_neu"/>
+                <label for="nachname_neu">Enter new lastname</label>
+                <input type="text" name="nachname_neu" id="nachname_neu"/>
+                <input type="submit" />
+            </form>
+
+        <?php endif; ?>
     </div>
-
-    <div>
-        <button onClick="location.href='./profil.php?changename=true'">Change Username</button>
-    </div>
-    <?php if(isset($_GET['changename'])): ?>
-        <form action="../../helpers/changename.php" method="get">
-            <label for="vorname_neu">Enter new name</label>
-            <input type="text" name="vorname_neu" id="vorname_neu"/>
-            <label for="nachname_neu">Enter new lastname</label>
-            <input type="text" name="nachname_neu" id="nachname_neu"/>
-            <input type="submit" />
-        </form>
-
-    <?php endif; ?>
 
     <footer id="footer" class="panel">
         <div class="inner split">

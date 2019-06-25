@@ -7,6 +7,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../../assets/css/main.css"/>
+    <link rel="stylesheet" href="../../style.css"/>
     <noscript>
         <link rel="stylesheet" href="../../assets/css/noscript.css"/>
     </noscript>
@@ -43,7 +44,7 @@
 
             if ($user !== false && password_verify($passwort, $user['passwort'])) {
                 $_SESSION['userid'] = $user['id'];
-                die('Login erfolgreich. Weiter zum <a href="profil.php">Profil</a>');
+                die('<div class="card"> Login erfolgreich. Weiter zum <a style="margin-left: 5px  " href="profil.php"> Profil</a></div>');
             } else {
                 $errorMessage = "E-Mail oder Passwort war ungültig</ br>";
             }
@@ -54,21 +55,23 @@
         <?php if (isset($errorMessage)): ?>
             <p><?php echo $errorMessage; ?></p>
         <?php endif; ?>
-
-        <form action="?login=1" method="post" style="width: 500px; text-align: right;">
-            <div>
-                <label for="email">E-Mail</label>
-                <input type="email" size="40" id="email" maxlength="250" name="email">
-            </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" size="40" id="password" maxlength="250" name="passwort">
-            </div>
-
-            <a href="register.php">Regestrieren</a>
-            <input type="submit" value="Login">
-        </form>
+        <div class="card">
+            <form class="login-form" action="?login=1" method="post" style="width: 500px; text-align: left;">
+                <div>
+                    <label for="email">E-Mail</label>
+                    <input type="email" size="40" id="email" maxlength="250" name="email">
+                </div>
+    
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" size="40" id="password" maxlength="250" name="passwort">
+                </div>
+                <div class="login-form-buttons">
+                    <a href="register.php">Regestrieren</a>
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
 
     </div>
 
